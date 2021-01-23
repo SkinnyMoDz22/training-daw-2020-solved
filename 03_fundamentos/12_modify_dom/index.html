@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <main>
+      <span class="test">Esto es un span</span>
+      <p class="test">
+        Esto es un párrafo
+      </p>
+      <div id="div_principal" aria-multiline="false">
+        Esto es un DIV
+      </div>
+    </main>
+
+    <script>
+      window.onload = function() {
+        let main = document.getElementsByTagName('main')[0]
+        let clonedSpan = main.getElementsByTagName('span')[0].cloneNode()
+
+        clonedSpan.textContent = 'Esto es otro span'
+        main.appendChild(clonedSpan)
+
+        let nuevoNodo = document.createElement('div')
+        let nuevoP = document.createElement('p')
+        nuevoP.innerText = 'Prueba'
+        
+        nuevoNodo.appendChild(nuevoP)
+        main.appendChild(nuevoNodo)
+      }
+    </script>
+  </body>
+</html>
